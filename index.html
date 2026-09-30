@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#101714">
+	<title>Zoro Club | Chess</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script type="module" src="script.js"></script>
+</head>
+<body>
+	<div class="app-shell">
+		<header class="topbar">
+			<a class="brand" href="#" aria-label="Zoro Club home">
+				<span class="brand-mark" aria-hidden="true">♞</span>
+				<span>Zoro<span class="brand-light">club</span></span>
+			</a>
+			<div class="topbar-center"><span class="live-dot"></span> LOCAL MATCH <span class="topbar-divider">/</span> 001</div>
+			<button class="icon-button help-button" type="button" aria-label="How to play" title="How to play">?</button>
+		</header>
+
+		<main class="game-layout">
+			<section class="game-intro" aria-label="Match information">
+				<div class="eyebrow"><span class="eyebrow-line"></span> THE CLASSIC, REIMAGINED</div>
+				<h1>Your move.<br><span>Make it count.</span></h1>
+				<p class="intro-copy">A little focus. A little courage.<br>See where the next move takes you.</p>
+
+				<div class="players-card">
+					<div class="player-row player-white" id="white-player">
+						<div class="player-avatar white-avatar" aria-hidden="true">♔</div>
+						<div class="player-meta"><span class="player-name">White</span><span class="player-subtitle">Playing locally</span></div>
+						<div class="player-clock" id="white-clock" aria-label="White clock">10:00</div>
+						<span class="turn-indicator" aria-hidden="true"></span>
+					</div>
+					<div class="player-separator"><span>VS</span></div>
+					<div class="player-row player-black" id="black-player">
+						<div class="player-avatar black-avatar" aria-hidden="true">♚</div>
+						<div class="player-meta"><span class="player-name">Black</span><span class="player-subtitle">Playing locally</span></div>
+						<div class="player-clock" id="black-clock" aria-label="Black clock">10:00</div>
+						<span class="turn-indicator" aria-hidden="true"></span>
+					</div>
+				</div>
+
+				<div class="game-note"><span class="note-icon">✳</span><span id="game-status" aria-live="polite">White to move</span></div>
+			</section>
+
+			<section class="board-section" aria-label="Chess board">
+				<div class="board-topline"><span><span class="board-live-dot"></span> LIVE BOARD</span><span id="move-count">MOVE 01</span></div>
+				<div class="board-frame">
+					<div class="board-coordinates ranks" id="rank-labels" aria-hidden="true"></div>
+					<div class="board-grid" id="chessboard" role="grid" aria-label="Chess board"></div>
+					<div class="board-coordinates files" id="file-labels" aria-hidden="true"></div>
+					<div class="promotion-overlay" id="promotion-overlay" hidden>
+						<div class="promotion-dialog" role="dialog" aria-modal="true" aria-labelledby="promotion-title">
+							<span class="promotion-kicker">PROMOTION</span>
+							<h2 id="promotion-title">Choose your piece</h2>
+							<div class="promotion-options" id="promotion-options"></div>
+						</div>
+					</div>
+				</div>
+				<div class="board-controls">
+					<span class="control-hint"><kbd>Click</kbd> a piece, then a square</span>
+					<div class="control-buttons">
+						<button class="control-button" id="undo-button" type="button" aria-label="Undo last move" title="Undo move"><span aria-hidden="true">↶</span></button>
+						<button class="control-button" id="flip-button" type="button" aria-label="Flip board" title="Flip board"><span aria-hidden="true">◒</span></button>
+						<button class="control-button" id="reset-button" type="button" aria-label="Start a new game" title="New game"><span aria-hidden="true">↻</span></button>
+					</div>
+				</div>
+			</section>
+
+			<aside class="moves-panel" aria-label="Move history">
+				<div class="moves-heading"><div><span class="eyebrow">THE STORY SO FAR</span><h2>Moves</h2></div><span class="moves-total" id="moves-total">00</span></div>
+				<div class="moves-columns"><span>MOVE</span><span>WHITE</span><span>BLACK</span></div>
+				<ol class="move-list" id="move-list" aria-live="polite"></ol>
+				<div class="moves-empty" id="moves-empty"><span class="empty-piece" aria-hidden="true">♘</span><span>Your first move<br>starts the story.</span></div>
+				<div class="moves-footer"><span class="footer-mark">♟</span><span>GOOD GAMES ARE<br>BUILT ONE MOVE AT A TIME.</span></div>
+			</aside>
+		</main>
+		<footer class="page-footer"><span>ZORO CLUB</span><span>TAKE YOUR TIME. FIND YOUR LINE.</span><span>EST. FOR THE LOVE OF THE GAME</span></footer>
+	</div>
+</body>
+</html>
